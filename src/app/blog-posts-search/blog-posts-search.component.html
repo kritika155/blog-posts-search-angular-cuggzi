@@ -1,0 +1,14 @@
+<input 
+  type="number" 
+  placeholder="enter user id..."
+  (input)="searchPosts($event.target.value)"
+>
+
+<ng-container *ngIf="(blogPosts$ | async) as blogPosts">
+	<p>User posts titles:</p>
+	<ul>
+    <li *ngFor="let blogPost of blogPosts">
+      {{blogPost.title}}
+    </li>
+	</ul>
+</ng-container>
